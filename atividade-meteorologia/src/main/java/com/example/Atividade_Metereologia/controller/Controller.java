@@ -1,24 +1,22 @@
-package com.example.RestAPI.controller;
+package com.example.Atividade_Metereologia.controller;
 
-import com.example.RestAPI.service.Service;
+import com.example.Atividade_Metereologia.service.WeatherService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    private final Service service 
 
-    public Controller(Service service) {
-        this.service = service;
-    };
+    private final WeatherService weatherService;
 
-    @GetMapping("/clima")
-    public String verClima(){
-        double latitude = -19.92;
-        double longitude = -43.94;
-        return service.verClima();
+    public Controller(WeatherService weatherService) {
+        this.weatherService = weatherService;
     }
 
-    
+    @GetMapping("/clima")
+    public String verClima() {
+        double latitude = -19.92;
+        double longitude = -43.94;
+        return weatherService.preverTempo(latitude, longitude);
+    }
 }
-
