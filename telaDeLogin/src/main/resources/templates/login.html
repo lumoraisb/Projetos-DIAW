@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+    <body>
+        <main>
+        <div class="login-image">
+            <img th:src="@{/img/img_login.jpeg}" alt="Imagem De Login">
+        </div>
+        <div class="login-card">
+            <h2>Login</h2>
+            <form th:action="@{/login}" method="post" class="login-form">
+                <input type="text" name="usuario" id="usuario" placeholder="Usuário" required>
+                <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                <button type="submit" class="login-submit-btn">Entrar</button>
+                <p class="login-footer-text">Ainda não tem cadastro?</p>
+                <p><a href="/register" class="login-link">Cadastre-se</a></p>
+                <p><a href="/recoverpassword" class="login-link">Esqueceu sua senha?</a></p>
+            </form>
+        </div>
+    </main>
+    </body>
+</html>
